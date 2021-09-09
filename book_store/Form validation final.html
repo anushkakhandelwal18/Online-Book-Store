@@ -1,0 +1,191 @@
+<html>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: solid 2px black;
+  background: #black;
+  font-color:black
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid brown;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+color:#black;
+
+  padding: 14px 20px;
+  margin: 8px ;
+  border: 10px;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.7;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: brown;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 25%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px ;
+}
+
+/* Clear floats */
+.clearbuttons::after {
+  content:"";
+  clear: both;
+  display: table;
+}
+
+
+}
+</style>
+<body background= "bg8.png" style="widht:1280px;height:720;">
+<script type="text/javascript">
+function validate(){
+var n= document.getElementById("FullName");
+var m= document.getElementById("Contact Number");
+var e= document.getElementById("Email");
+var c= document.getElementById("Customer Id");
+
+var patt_n=/(^[A-Z|a-z]+\s[A-Za-z]=$)/;
+var patt_m=/^(?:\+)91+\s[7-9]{1}[0-9]{9}/;
+var patt_e=/^[A-Za-z0-9\.-]@([A-Za-z0-9-]+).([a-z]{2,3})$/;
+var patt_c= /^((CUSTID-)[0-9]{6})/;
+
+if (n.value==" "){
+alert("please enter your full name.");
+n.style.border="2px solid red";
+return false;
+}
+if (m.value==" "){
+alert("please enter your contact number.");
+n.style.border="2px solid red";
+return false;
+}
+if (e.value==" "){
+alert("please enter your email id.");
+n.style.border="2px solid red";
+return false;
+}
+if (c.value==" "){
+alert("please enter your Customer Id.");
+n.style.border="2px solid red";
+return false;
+}else{
+if(patt_n.test(n.value)){
+if(patt_n.test(m.value)){
+if(patt_e.test(e.value)){
+if(patt_c.test(c.value)){
+alert("Thank you for your time! Happy reading!");
+}else{
+alert("please enter valid Customer Id.");
+return false;
+}
+}else{ 
+alert("please enter valid Email.");
+return false;
+}
+}else{
+alert("please enter valid contact number.");
+return false;
+}
+}else{
+alert("please enter your Full Name.");
+return false;
+}
+}
+}
+function clr()
+         {
+             document.getElementById("FullName").value = ""
+			 document.getElementById("Contact Number").value = ""
+			 document.getElementById("Email").value = ""
+			 document.getElementById("Customer Id").value = ""
+			 document.getElementById("DOB").value = ""
+			 document.getElementById("password").value = ""
+         }
+</script>
+
+
+<form style="border-radius:30px;border:3px solid brown;">
+  <div class="container">
+    <h1> <font size="10" style="color:#e0a246;text-shadow:1px 1px black;">LOGIN</font></h1>
+    
+    <hr>
+	<label for="name"><b><font style="color:#d6c09f;">FULL NAME</font></b></label>
+	<br>
+    <input id="FullName" style="background-color:#111212;input-color:black;border:solid 1px brown;box-shadow:2px 2px 5px;color:brown;border-radius:50px;" type="text" placeholder="Enter Full Name" name="name" required>
+	<br>
+	
+<label for="birthday"><b><font style="color:#d6c09f;">DOB</font></b></label>
+<br>
+  <input id="DOB" style="background-color:#262626;input-color:black;border:solid 1px brown;box-shadow:2px 2px 5px;color:brown;border-radius:50px;" type="date" placeholder="pick your DOB" name="DOB" required>
+ <br><br>
+ <label for="gender"><b><font style="color:#d6c09f;">GENDER</font></b></label><br>
+ <input type="radio" id="male" name="gender" value="male">
+  <label for="male"><font style="color:#d6c09f;">Male</font></label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female"><font style="color:#d6c09f;">Female</font></label><br>
+  <input type="radio" id="other" name="gender" value="other">
+  <label for="other"><font style="color:#d6c09f;">Other</font></label>
+    <br>
+	<br>
+	<label for="mobile"><b><font style="color:#d6c09f;">MOBILE NUMBER</font></b></label>
+	<br>
+    <input id="Contact Number" style="background-color:#111212;input-color:black;border:solid 1px brown;box-shadow:2px 2px 5px;color:brown border-radius:50px;" type="mobile" placeholder="Enter your mobile number" name="mobile" required>
+	<br><br>
+	<label for="email"><b><font style="color:#d6c09f;">EMAIL ADDRESS</font></b></label>
+	<br>
+    <input id="Email" style="background-color:#111212;input-color:black;border:solid 1px brown;box-shadow:2px 2px 5px;color:brown;border-radius:50px;" type="text" placeholder="Enter Email" name="email" required>
+<br>
+    <label for="psw"><b><font style="color:#d6c09f;">PASSWORD</font></b></label>
+	<br>
+    <input id="password" style="background-color:#111212;border:solid 1px brown;box-shadow:2px 2px 5px;color:brown;border-radius:50px;" type="password" placeholder="Enter Password" name="psw" required>
+<br>
+    <label for="Customer Id"><b><font style="color:#d6c09f;">CUSTOMER ID</font></b></label>
+	<br>
+    <input id="Customer Id" style="background-color:#111212;border:solid 1px brown;box-shadow:2px 2px 5px;color:brown;border-radius:50px;" type="text" placeholder="CUSTID" name="Customer Id" required>
+    <br>
+    <label>
+      <input type="checkbox"  name="remember" style="background-color:#111212;margin-bottom:15px"><font style="color:#d6c09f;"> Remember me </font>
+    </label>
+    
+    <p><font style="color:white;">By creating an account you agree to our <a href="https://www.amazon.in/gp/help/customer/display.html?nodeId=GLSBYFE9MGKKQXXM" target="_blank" style="color:#d6c09f">Terms & Privacy</a></font></p>
+
+    <div class="clearbuttons">
+      <button style="box-shadow:inset 3px 3px 10px ;color:#d6c09f; border-radius: 20px;"type="button" class="cancelbtn" onclick="clr()"><font size="3";>Cancel Registration</a></font></button>
+      <button style="box-shadow:inset 3px 3px 10px ;color:#d6c09f; border-radius: 20px;background-color:brown"type="submit" class="signupbtn"><font size="3";>Sign Up</font></button>
+    </div>
+  </div>
+</form>
+
+</body>
+</html>
